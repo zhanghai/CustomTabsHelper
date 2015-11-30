@@ -7,10 +7,14 @@
 
 <manifest
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="me.zhanghai.android.customtabshelper">
 
     <application>
 
-        <!--<service android:name="" />-->
+        <service
+            android:name="org.chromium.customtabsclient.KeepAliveService"
+            android:exported="true"
+            tools:ignore="ExportedService" />
     </application>
 </manifest>

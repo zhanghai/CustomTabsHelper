@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--
+  ~ Copyright (c) 2015 Zhang Hai <Dreaming.in.Code.ZH@Gmail.com>
+  ~ All Rights Reserved.
+  -->
+
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingLeft="@dimen/screen_edge_horizontal_margin"
+    android:paddingRight="@dimen/screen_edge_horizontal_margin"
+    android:paddingTop="@dimen/screen_edge_vertical_margin"
+    android:paddingBottom="@dimen/screen_edge_vertical_margin"
+    tools:context="me.zhanghai.android.customtabshelper.sample.MainActivity">
+
+    <Button
+        android:id="@+id/view_on_github"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="@string/view_on_github"
+        style="@style/Widget.AppCompat.Button.Colored" />
+</FrameLayout>
