@@ -60,9 +60,7 @@ public class CustomTabsHelperFragment extends Fragment {
     /*
      * @see CustomTabsActivityHelper#openCustomTab(Activity, CustomTabsIntent, Uri, CustomTabsActivityHelper.CustomTabsFallback)
      */
-    public static void open(Activity activity,
-                            CustomTabsIntent intent,
-                            Uri uri,
+    public static void open(Activity activity, CustomTabsIntent intent, Uri uri,
                             CustomTabsActivityHelper.CustomTabsFallback fallback) {
         CustomTabsActivityHelper.openCustomTab(activity, intent, uri, fallback);
     }
