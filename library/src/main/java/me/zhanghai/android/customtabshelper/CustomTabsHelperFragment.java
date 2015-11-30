@@ -9,11 +9,14 @@ import android.app.Activity;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.customtabs.CustomTabsIntent;
+import android.support.customtabs.CustomTabsSession;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
 
 import org.chromium.customtabsclient.CustomTabsActivityHelper;
+
+import java.util.List;
 
 /**
  * A Fragment that manages a {@link CustomTabsActivityHelper}.
@@ -54,15 +57,7 @@ public class CustomTabsHelperFragment extends Fragment {
     }
 
     /**
-     * Opens the URL on a Custom Tab if possible. Otherwise fallsback to opening it on a WebView.
-     *
-     * <p>This is a wrapper for
-     * {@link CustomTabsActivityHelper#openCustomTab(Activity, CustomTabsIntent, Uri, CustomTabsActivityHelper.CustomTabsFallback)}</p>
-     *
-     * @param activity The host activity.
-     * @param intent a CustomTabsIntent to be used if Custom Tabs is available.
-     * @param uri the Uri to be opened.
-     * @param fallback a CustomTabsFallback to be used if Custom Tabs is not available.
+     * @see {@link CustomTabsActivityHelper#openCustomTab(Activity, CustomTabsIntent, Uri, CustomTabsActivityHelper.CustomTabsFallback)}
      */
     public static void open(Activity activity,
                             CustomTabsIntent intent,
@@ -78,6 +73,28 @@ public class CustomTabsHelperFragment extends Fragment {
      */
     public CustomTabsActivityHelper getHelper() {
         return mCustomTabsActivityHelper;
+    }
+
+    /**
+     * @see {@link CustomTabsActivityHelper#getSession()}
+     */
+    public CustomTabsSession getSession() {
+        return mCustomTabsActivityHelper.getSession();
+    }
+
+    /**
+     * @see {@link CustomTabsActivityHelper#setConnectionCallback(CustomTabsActivityHelper.ConnectionCallback)}
+     */
+    public void setConnectionCallback(
+            CustomTabsActivityHelper.ConnectionCallback connectionCallback) {
+        mCustomTabsActivityHelper.setConnectionCallback(connectionCallback);
+    }
+
+    /**
+     * @see {@link CustomTabsActivityHelper#mayLaunchUrl(Uri, Bundle, List)}
+     */
+    public boolean mayLaunchUrl(Uri uri, Bundle extras, List<Bundle> otherLikelyBundles) {
+        return mCustomTabsActivityHelper.mayLaunchUrl(uri, extras, otherLikelyBundles);
     }
 
     @Override
