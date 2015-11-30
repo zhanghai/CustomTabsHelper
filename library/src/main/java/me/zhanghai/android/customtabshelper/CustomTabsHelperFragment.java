@@ -25,7 +25,7 @@ public class CustomTabsHelperFragment extends Fragment {
 
     private static final String FRAGMENT_TAG = CustomTabsHelperFragment.class.getName();
 
-    private CustomTabsActivityHelper mCustomTabsActivityHelper;
+    private CustomTabsActivityHelper mCustomTabsActivityHelper = new CustomTabsActivityHelper();
 
     /**
      * Ensure that an instance of this fragment is attached to an activity.
@@ -103,8 +103,6 @@ public class CustomTabsHelperFragment extends Fragment {
 
         setRetainInstance(true);
         setUserVisibleHint(false);
-
-        mCustomTabsActivityHelper = new CustomTabsActivityHelper();
     }
 
     @Override

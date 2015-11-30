@@ -67,7 +67,15 @@ public class MainActivity extends AppCompatActivity {
                 .setShowTitle(true)
                 .build();
 
-        mCustomTabsHelperFragment.mayLaunchUrl(PROJECT_URI, null, null);
+        mCustomTabsHelperFragment.setConnectionCallback(
+                new CustomTabsActivityHelper.ConnectionCallback() {
+                    @Override
+                    public void onCustomTabsConnected() {
+                        mCustomTabsHelperFragment.mayLaunchUrl(PROJECT_URI, null, null);
+                    }
+                    @Override
+                    public void onCustomTabsDisconnected() {}
+                });
         mViewOnGitHubButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
