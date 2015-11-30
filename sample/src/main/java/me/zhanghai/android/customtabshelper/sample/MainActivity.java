@@ -23,11 +23,26 @@ import butterknife.BindColor;
 import butterknife.ButterKnife;
 import me.zhanghai.android.customtabshelper.CustomTabsHelperFragment;
 
-public class MainActivity extends AppCompatActivity
-        implements CustomTabsActivityHelper.CustomTabsFallback {
+public class MainActivity extends AppCompatActivity {
 
     private static final Uri PROJECT_URI = Uri.parse(
             "https://github.com/DreaminginCodeZH/CustomTabsHelper");
+
+    private final CustomTabsActivityHelper.CustomTabsFallback mCustomTabsFallback =
+            new CustomTabsActivityHelper.CustomTabsFallback() {
+                @Override
+                public void openUri(Activity activity, Uri uri) {
+                    Toast.makeText(activity, R.string.custom_tabs_failed, Toast.LENGTH_SHORT)
+                            .show();
+                    try {
+                        activity.startActivity(new Intent(Intent.ACTION_VIEW, uri));
+                    } catch (ActivityNotFoundException e) {
+                        e.printStackTrace();
+                        Toast.makeText(activity, R.string.activity_not_found, Toast.LENGTH_SHORT)
+                                .show();
+                    }
+                }
+            };
 
     @BindColor(R.color.colorPrimary)
     int mColorPrimary;
@@ -35,6 +50,7 @@ public class MainActivity extends AppCompatActivity
     @Bind(R.id.view_on_github)
     Button mViewOnGitHubButton;
 
+    private CustomTabsHelperFragment mCustomTabsHelperFragment;
     private CustomTabsIntent mCustomTabsIntent;
 
     @Override
@@ -44,31 +60,20 @@ public class MainActivity extends AppCompatActivity
         setContentView(R.layout.main_activity);
         ButterKnife.bind(this);
 
-        CustomTabsHelperFragment.attachTo(this);
-
+        mCustomTabsHelperFragment = CustomTabsHelperFragment.attachTo(this);
         mCustomTabsIntent = new CustomTabsIntent.Builder()
                 .enableUrlBarHiding()
                 .setToolbarColor(mColorPrimary)
                 .setShowTitle(true)
                 .build();
 
+        mCustomTabsHelperFragment.mayLaunchUrl(PROJECT_URI, null, null);
         mViewOnGitHubButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 CustomTabsHelperFragment.open(MainActivity.this, mCustomTabsIntent, PROJECT_URI,
-                        MainActivity.this);
+                        mCustomTabsFallback);
             }
         });
-    }
-
-    @Override
-    public void openUri(Activity activity, Uri uri) {
-        Toast.makeText(this, R.string.custom_tabs_failed, Toast.LENGTH_SHORT).show();
-        try {
-            startActivity(new Intent(Intent.ACTION_VIEW, uri));
-        } catch (ActivityNotFoundException e) {
-            e.printStackTrace();
-            Toast.makeText(this, R.string.activity_not_found, Toast.LENGTH_SHORT).show();
-        }
     }
 }
