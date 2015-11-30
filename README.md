@@ -32,7 +32,7 @@ compile 'me.zhanghai.android.customtabshelper:library:1.0.0'
 
 ## Usage
 
-To attach a [CustomTabsHelperFragment](library/src/main/java/me/zhanghai/android/customtabshelper/CustomTabsHelperFragment.java) to an activity (or the host activity for a fragment):
+To attach a [CustomTabsHelperFragment](library/src/main/java/me/zhanghai/android/customtabshelper/CustomTabsHelperFragment.java) to an activity:
 
 ```java
 private CustomTabsHelperFragment mCustomTabsHelperFragment;
@@ -44,6 +44,8 @@ protected void onCreate(Bundle savedInstanceState) {
     ...
 }
 ```
+
+Calling `attachTo()` for a fragment also works fine because the `CustomTabsHelperFragment` is always attached to the host activity. So in this way, you can call `attachTo()` whenever your fragment or activity itself needs to use custom tabs, thus managing custom tabs usage independently.
 
 To hint for a likely URL:
 
