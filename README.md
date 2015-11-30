@@ -1,6 +1,6 @@
 # CustomTabsHelper
 
-Custom tabs, made simple.
+Custom tabs, made easy.
 
 ## Why custom tabs?
 
