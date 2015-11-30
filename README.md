@@ -20,7 +20,7 @@ Apart from the [custom tabs support library](http://developer.android.com/tools/
 
 The Google sample included a [CustomTabActivityHelper](https://github.com/GoogleChrome/custom-tabs-client/blob/master/demos/src/main/java/org/chromium/customtabsdemos/CustomTabActivityHelper.java) and some other utilities, which can be of great convenience for developers. However, manually integrating them is still tedious.
 
-This library packaged those utility classes and service declaration for easy integration. Furthermore, a `CustomTabsHelperFragment` is added for managing the `CustomTabActivityHelper` with your activity life cycle automatically. Now you can enjoy the warm up boost within ten lines of code.
+This library packaged those utility classes and service declaration for easy integration. Furthermore, a `CustomTabsHelperFragment` is added for managing the `CustomTabActivityHelper` with your activity life cycle automatically. Now you can enjoy the warm up boost within lines of code.
 
 [Sample APK](//github.com/DreaminginCodeZH/CustomTabsHelper/releases/download/v1.0.0/sample-release.apk)
 
