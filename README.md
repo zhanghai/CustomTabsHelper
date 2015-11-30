@@ -53,6 +53,8 @@ To hint for a likely URL:
 mCustomTabsHelperFragment.mayLaunchUrl(YOUR_URI, null, null);
 ```
 
+But it is likely that you need to wrap this call in a `CustomTabsActivityHelper.ConnectionCallback` just as [in the sample app](sample/src/main/java/me/zhanghai/android/customtabshelper/sample/MainActivity.java).
+
 To open a URL with custom tabs:
 
 ```java
