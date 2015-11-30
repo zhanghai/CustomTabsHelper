@@ -29,7 +29,7 @@ This library packaged those utility classes and service declaration for easy int
 Gradle:
 
 ```gradle
-compile 'me.zhanghai.android.customtabshelper:library:1.0.0'
+compile 'me.zhanghai.android.customtabshelper:library:1.0.1'
 ```
 
 ## Usage
