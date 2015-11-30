@@ -113,9 +113,9 @@ public class CustomTabsActivityHelper implements ServiceConnectionCallback {
         CustomTabsClient.bindCustomTabsService(activity, packageName, mConnection);
     }
 
-    /**
-     * @see {@link CustomTabsSession#mayLaunchUrl(Uri, Bundle, List)}.
-     * @return true if call to mayLaunchUrl was accepted.
+    // Cannot get javadoc to compile, saying "reference not found".
+    /*
+     * @see CustomTabsSession#mayLaunchUrl(Uri, Bundle, List)
      */
     public boolean mayLaunchUrl(Uri uri, Bundle extras, List<Bundle> otherLikelyBundles) {
         if (mClient == null) return false;

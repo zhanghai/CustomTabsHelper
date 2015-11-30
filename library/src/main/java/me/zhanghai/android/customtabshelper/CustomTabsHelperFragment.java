@@ -56,8 +56,9 @@ public class CustomTabsHelperFragment extends Fragment {
         return attachTo(fragment.getActivity());
     }
 
-    /**
-     * @see {@link CustomTabsActivityHelper#openCustomTab(Activity, CustomTabsIntent, Uri, CustomTabsActivityHelper.CustomTabsFallback)}
+    // Cannot get javadoc to compile, saying "reference not found".
+    /*
+     * @see CustomTabsActivityHelper#openCustomTab(Activity, CustomTabsIntent, Uri, CustomTabsActivityHelper.CustomTabsFallback)
      */
     public static void open(Activity activity,
                             CustomTabsIntent intent,
@@ -76,14 +77,14 @@ public class CustomTabsHelperFragment extends Fragment {
     }
 
     /**
-     * @see {@link CustomTabsActivityHelper#getSession()}
+     * @see CustomTabsActivityHelper#getSession()
      */
     public CustomTabsSession getSession() {
         return mCustomTabsActivityHelper.getSession();
     }
 
     /**
-     * @see {@link CustomTabsActivityHelper#setConnectionCallback(CustomTabsActivityHelper.ConnectionCallback)}
+     * @see CustomTabsActivityHelper#setConnectionCallback(CustomTabsActivityHelper.ConnectionCallback)
      */
     public void setConnectionCallback(
             CustomTabsActivityHelper.ConnectionCallback connectionCallback) {
@@ -91,7 +92,7 @@ public class CustomTabsHelperFragment extends Fragment {
     }
 
     /**
-     * @see {@link CustomTabsActivityHelper#mayLaunchUrl(Uri, Bundle, List)}
+     * @see CustomTabsActivityHelper#mayLaunchUrl(Uri, Bundle, List)
      */
     public boolean mayLaunchUrl(Uri uri, Bundle extras, List<Bundle> otherLikelyBundles) {
         return mCustomTabsActivityHelper.mayLaunchUrl(uri, extras, otherLikelyBundles);
