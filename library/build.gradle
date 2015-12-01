@@ -6,6 +6,7 @@
 apply plugin: 'com.android.library'
 
 android {
+
     compileSdkVersion Integer.parseInt(project.ANDROID_COMPILE_SDK_VERSION)
     buildToolsVersion project.ANDROID_BUILD_TOOLS_VERSION
 
@@ -15,6 +16,7 @@ android {
         versionCode Integer.parseInt(project.VERSION_CODE)
         versionName project.VERSION_NAME
     }
+
     buildTypes {
         release {
             minifyEnabled false
