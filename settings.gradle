@@ -3,4 +3,4 @@
  * All Rights Reserved.
  */
 
-include ':sample', ':library'
+include ':library', ':sample'
