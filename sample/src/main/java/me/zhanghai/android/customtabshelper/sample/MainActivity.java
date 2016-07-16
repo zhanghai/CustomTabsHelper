@@ -18,8 +18,8 @@ import android.widget.Toast;
 
 import org.chromium.customtabsclient.CustomTabsActivityHelper;
 
-import butterknife.Bind;
 import butterknife.BindColor;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 import me.zhanghai.android.customtabshelper.CustomTabsHelperFragment;
 
@@ -47,7 +47,7 @@ public class MainActivity extends AppCompatActivity {
     @BindColor(R.color.colorPrimary)
     int mColorPrimary;
 
-    @Bind(R.id.view_on_github)
+    @BindView(R.id.view_on_github)
     Button mViewOnGitHubButton;
 
     private CustomTabsHelperFragment mCustomTabsHelperFragment;
