@@ -6,6 +6,7 @@
 package me.zhanghai.android.customtabshelper;
 
 import android.app.Activity;
+import android.content.ActivityNotFoundException;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.customtabs.CustomTabsIntent;
@@ -62,7 +63,11 @@ public class CustomTabsHelperFragment extends Fragment {
      */
     public static void open(Activity activity, CustomTabsIntent intent, Uri uri,
                             CustomTabsActivityHelper.CustomTabsFallback fallback) {
-        CustomTabsActivityHelper.openCustomTab(activity, intent, uri, fallback);
+        try {
+            CustomTabsActivityHelper.openCustomTab(activity, intent, uri, fallback);
+        } catch (ActivityNotFoundException e) {
+            fallback.openUri(activity, uri);
+        }
     }
 
     /**
