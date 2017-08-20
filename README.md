@@ -22,14 +22,14 @@ The Google sample included a [CustomTabActivityHelper](https://github.com/Google
 
 This library packaged those utility classes and service declaration for easy integration. Furthermore, a `CustomTabsHelperFragment` is added for managing the `CustomTabActivityHelper` with your activity life cycle automatically. Now you can enjoy the warm up boost within lines of code.
 
-[Sample APK](//github.com/DreaminginCodeZH/CustomTabsHelper/releases/download/v1.0.3/sample-release.apk)
+[Sample APK](//github.com/DreaminginCodeZH/CustomTabsHelper/releases/download/v1.0.4/sample-release.apk)
 
 ## Integration
 
 Gradle:
 
 ```gradle
-compile 'me.zhanghai.android.customtabshelper:library:1.0.3'
+compile 'me.zhanghai.android.customtabshelper:library:1.0.4'
 ```
 
 ## Usage
