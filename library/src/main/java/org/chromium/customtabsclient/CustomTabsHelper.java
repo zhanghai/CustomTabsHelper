@@ -12,6 +12,7 @@ import android.content.pm.PackageManager;
 import android.content.pm.ResolveInfo;
 import android.net.Uri;
 import android.os.Build;
+import android.support.customtabs.CustomTabsService;
 import android.text.TextUtils;
 import android.util.Log;
 
@@ -44,7 +45,7 @@ public class CustomTabsHelper {
     private static final String EXTRA_CUSTOM_TABS_KEEP_ALIVE =
             "android.support.customtabs.extra.KEEP_ALIVE";
     private static final String ACTION_CUSTOM_TABS_CONNECTION =
-            "android.support.customtabs.action.CustomTabsService";
+            CustomTabsService.ACTION_CUSTOM_TABS_CONNECTION;
 
     private static String sPackageNameToUse;
 
