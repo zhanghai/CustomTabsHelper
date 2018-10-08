@@ -12,7 +12,6 @@ import android.content.pm.PackageManager;
 import android.content.pm.ResolveInfo;
 import android.net.Uri;
 import android.os.Build;
-import android.support.customtabs.CustomTabsService;
 import android.text.TextUtils;
 import android.util.Log;
 
@@ -42,12 +41,13 @@ public class CustomTabsHelper {
     static final String BETA_PACKAGE = "com.chrome.beta";
     static final String DEV_PACKAGE = "com.chrome.dev";
     static final String LOCAL_PACKAGE = "com.google.android.apps.chrome";
-    // HACK: This prevents Jetifier from tempering with our constant.
+    // HACK: Using a StringBuilder prevents Jetifier from tempering with our constants.
     @SuppressWarnings("StringBufferReplaceableByString")
-    private static final String EXTRA_CUSTOM_TABS_KEEP_ALIVE =
-            new StringBuilder("android").append(".support.customtabs.extra.KEEP_ALIVE").toString();
-    private static final String ACTION_CUSTOM_TABS_CONNECTION =
-            CustomTabsService.ACTION_CUSTOM_TABS_CONNECTION;
+    private static final String EXTRA_CUSTOM_TABS_KEEP_ALIVE = new StringBuilder("android")
+            .append(".support.customtabs.extra.KEEP_ALIVE").toString();
+    @SuppressWarnings("StringBufferReplaceableByString")
+    private static final String ACTION_CUSTOM_TABS_CONNECTION = new StringBuilder("android")
+            .append(".support.customtabs.action.CustomTabsService").toString();
 
     private static String sPackageNameToUse;
 
