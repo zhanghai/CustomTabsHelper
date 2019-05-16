@@ -26,7 +26,7 @@ import me.zhanghai.android.customtabshelper.CustomTabsHelperFragment;
 public class MainActivity extends AppCompatActivity {
 
     private static final Uri PROJECT_URI = Uri.parse(
-            "https://github.com/DreaminginCodeZH/CustomTabsHelper");
+            "https://github.com/zhanghai/CustomTabsHelper");
 
     private final CustomTabsActivityHelper.CustomTabsFallback mCustomTabsFallback =
             new CustomTabsActivityHelper.CustomTabsFallback() {
